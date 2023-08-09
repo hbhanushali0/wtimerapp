@@ -1,0 +1,19 @@
+Login to AWS Console 
+
+Setup Your Amazon Linux EC2 instance
+
+Goto Connect -> SSH -> Copy the ssh command
+
+In your terminal -> cd "folder-that-has-pem-file"
+
+In the Prompt enter "Yes"
+
+If Your Key has not been copied too many times , your instance will get connected 
+
+However,if your key has been copied too many times you have to delete the hostedlist from your system, to do the same in linux or Mac ->
+
+Open terminal -> cd "folder-that-has-pem-file"
+
+->Chmod 400 "key-file.pem"
+->ssh-add -K ./key-file.pem
+-> now paste the ssh command copied from was console -> instance connected.

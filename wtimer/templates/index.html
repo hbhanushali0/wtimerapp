@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Washroom Usage</title>
+    <style>
+        /* Center the input form */
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+            background-color: #222;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="minutes">Time in minutes:</label>
+        <input type="number" id="minutes" name="minutes" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+

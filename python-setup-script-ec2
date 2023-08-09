@@ -1,0 +1,13 @@
+After logging into the instance
+-> sudo yum update
+-> sudo dnf install python3
+-> python3 --version
+-> curl -O https://bootstrap.pypa.io/get-pip.py
+-> python3 get-pip.py --user
+-> echo $SHELL
+-> ls -a ~
+-> export PATH=/bin/bash:$PATH
+-> pip --version
+-> pip install flask
+-> pip install pymysql
+

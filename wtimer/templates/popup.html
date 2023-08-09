@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Washroom Usage</title>
+    <style>
+        /* Styles for the popup */
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text color */
+            z-index: 9999;
+        }
+    </style>
+    <script>
+        // Function to show the popup with the entry information
+        function showPopup(name, minutes) {
+            var popup = document.getElementById('popup');
+            popup.innerHTML = name + " is using the washroom for " + minutes + " minutes.";
+            popup.style.display = 'block';
+            // Close the popup after minutes.
+            setTimeout(function () {
+                popup.style.display = 'none';
+                window.location.href = "{{ url_for('index') }}"; // Redirect to index.html
+            }, minutes * 60 * 1000); // Convert minutes to milliseconds
+        }
+
+        // Refresh the page every minute
+        setInterval(function () {
+            window.location.reload();
+        }, 60 * 1000); // Refresh every minute
+
+        // Call the showPopup function with the provided values
+        window.onload = function () {
+            showPopup("{{ name }}", {{ minutes }});
+        };
+    </script>
+</head>
+<body>
+    <div id="popup"></div>
+</body>
+</html>
